@@ -3,7 +3,7 @@
 import importLocal from 'import-local'
 import entry from '../lib/index.js'
 import { fileURLToPath } from 'node:url'
-import { log } from '@noah/utils'
+import { log } from '@evangelineme/utils'
 // import { filename } from 'dirname-filename-esm'
 
 

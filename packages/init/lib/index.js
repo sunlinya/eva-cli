@@ -1,6 +1,6 @@
 'use strict';
-import { log } from '@noah/utils';
-import Command from '@noah/command';
+import { log } from '@evangelineme/utils';
+import Command from '@evangelineme/command';
 
 class InitCommand extends Command{
     get command(){

@@ -1,6 +1,6 @@
 import { program } from 'commander';
 import path from 'node:path'
-import { log, isDebug } from '@noah/utils'
+import { log, isDebug } from '@evangelineme/utils'
 import semver from 'semver';
 import chalk from 'chalk';
 import { dirname } from 'dirname-filename-esm'

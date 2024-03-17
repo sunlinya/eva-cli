@@ -1,4 +1,4 @@
-import createInitCommand from '@noah/init';
+import createInitCommand from '@evangelineme/init';
 import createCLI from './createCLI.js'
 import './exception.js'
 

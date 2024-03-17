@@ -1,5 +1,5 @@
 
-import { log, isDebug } from '@noah/utils';
+import { log, isDebug } from '@evangelineme/utils';
 function printErrorLog(e,type){
     if(isDebug()){
         log.error(type,e);
