@@ -17,7 +17,10 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "npmlog": "^7.0.1"
+    "axios": "^1.6.8",
+    "inquirer": "^9.2.16",
+    "npmlog": "^7.0.1",
+    "url-join": "^5.0.0"
   },
   "type": "module"
 }

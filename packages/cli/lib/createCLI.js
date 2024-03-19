@@ -14,7 +14,6 @@ const pkg = fs.readJSONSync(pkgPath);
 const LOWEST_NODE_VERSION = '14.0.0';
 
 function checkNodeVersion(){
-    log.verbose('node version',process.version)
     if(!semver.gte(process.version, LOWEST_NODE_VERSION)){{
         throw new Error(chalk.red(`node版本过低，需要安装${LOWEST_NODE_VERSION}及以上的版本！`  ))
     }}
@@ -27,9 +26,6 @@ function preAction(){
 
 
 export default function createCLI(){
-
-    log.info('version', pkg.version);
-  
     program
         .name(Object.keys(pkg.bin)[0])
         .usage('<command> [options]')
