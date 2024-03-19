@@ -1,7 +1,11 @@
 import { log, makeList,makeInput,getLatestVersion } from '@evangelineme/utils'
-
+import { homedir } from 'node:os'
+import path from 'node:path'
 const ADD_TYPE_PAGE = 'page';
 const ADD_TYPE_PROJECT = 'project';
+
+// 缓存目录
+const TEMP_HOME = '.abbr_cache'
 
 
 const ADD_TEMPLATE = [
@@ -36,7 +40,13 @@ function getAddType(){
 function getAddName(){
     return makeInput({
         message: '请输入项目名称',
-        defaultValue: ''
+        defaultValue: '',
+        validate(v){
+            if(v.length > 0){
+                return true
+            }
+            return '项目名称必须输入'
+        }
     })
 }
 
@@ -46,6 +56,14 @@ function getAddtemplate(){
         choices:ADD_TEMPLATE,
         message:"请选择项目模板"
     })
+}
+
+
+
+// 安装缓存目录
+
+function makeTargetPath(){
+    return path.resolve(`${homedir()}/${TEMP_HOME}`,'addTemplate')
 }
 
 export default async function createTemplate(name,opts){
@@ -63,10 +81,13 @@ export default async function createTemplate(name,opts){
         const latestVersion = await getLatestVersion(selectedTemplate.npmName);
         log.verbose('latestVersion',latestVersion);
         selectedTemplate.version = latestVersion;
+
+        const targetPath = makeTargetPath();
         return {
             type: addType,
             name: addName,
-            template: selectedTemplate
+            template: selectedTemplate,
+            targetPath
         }
     }
 
