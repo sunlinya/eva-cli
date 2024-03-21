@@ -12,13 +12,19 @@ const ADD_TEMPLATE = [
     {
         name:'vue3项目模板',
         value:'template-vue3',
-        npmName:'@evangelineme/template-vue3',
+        npmName:'@abbr.sly/template-vue3',
         version:'1.0.1'
     },
     {
         name:'react18项目模板',
         value:'template-react18',
-        npmName:'@evangelineme/template-react18',
+        npmName:'@abbr.sly/template-react18',
+        version:'1.0.0'
+    },
+    {
+        name:'vue-element-admin项目模板',
+        value:'vue-element-admin',
+        npmName:'@abbr.sly/template-vue-element-admin',
         version:'1.0.0'
     }
 ];
@@ -67,7 +73,7 @@ function makeTargetPath(){
 }
 
 export default async function createTemplate(name,opts){
-    const { type, template, name } = opts;
+    const { type, template } = opts;
     // 获取创建类型
     let addType, addName,addTemplate;
     if(type){
